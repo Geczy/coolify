@@ -42,6 +42,14 @@ class Links extends Component
                     });
                 }
             }
+
+            // Add GitHub source link if it exists
+            if ($application->gitBranchLocation) {
+                $this->links->push([
+                    'type' => 'github',
+                    'url' => $application->gitBranchLocation
+                ]);
+            }
         });
     }
 
